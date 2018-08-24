@@ -4,3 +4,5 @@ engines:
     channel: "beta"
     plugins:
       - django
+exclude_paths:
+- **migrations/*.py
