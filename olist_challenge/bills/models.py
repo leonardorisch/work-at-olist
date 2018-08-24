@@ -2,7 +2,7 @@ from django.db import models
 from calls.models import *
 
 class BillCall(models.Model):
-    call_id = models.OneToOneField(
+    call = models.OneToOneField(
         EndCall,
         on_delete=models.CASCADE
     )
@@ -14,5 +14,5 @@ class BillCall(models.Model):
 
 class Bill(models.Model):
     subscriber = models.CharField(max_length=15)
-    period = models.DateTimeField()
+    period = models.DurationField()
     calls = models.ManyToManyField(BillCall)
